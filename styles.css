@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: mediumslateblue;
+    background-image: url(backgroundpic.jpg);
     color: white;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
