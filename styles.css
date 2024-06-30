@@ -1,157 +1,123 @@
+/*Basic look*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Body */
 body {
     background-image: url(backgroundpic.jpg);
-    color: white;
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-header {
-    font-size: 1.5rem;
+/* Main container */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
-header, 
+/* Heading */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
 form {
-    min-height: 20vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
-form input, 
-form button {
-    padding: 0.5rem;
-    padding-left: 1rem;
-    font-size: 1.8rem;
+/* Input */
+.todo-input {
+    padding: 10px;
+    border: 2px solid #ffa500; /* Orange border */
+    border-radius: 5px;
+    outline: none;
+    width: 70%;
+}
+
+/* Add Button */
+.todo-button {
+    padding: 10px;
     border: none;
-    background: white;
-    border-radius: 2rem;
-}
-
-form button {
-    color: rgb(255, 200, 0);
-    background: white;
-    cursor: pointer;
-    transition: all 0.3 ease;
-    margin-left: 0.5rem;
-}
-
-form button:hover {
+    background-color: #ffa500; /* Orange background */
     color: white;
-    background: rgb(255, 200, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
-.fa-plus-circle {
-    margin-top: 0.3rem;
-    margin-left: -8px;
+.todo-button:hover {
+    background-color: #ff8c00; /* Darker orange */
 }
 
-.todo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* List */
 .todo-list {
-    min-width: 30%;
     list-style: none;
+    padding: 0;
 }
 
+/* Todo item */
 .todo {
-    margin: 0.5rem;
-    padding-left: 0.5rem;
-    background: white;
-    color: black;
-    font-size: 1.5rem;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ffa500; /* Orange border */
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 0.5s;
-    border-radius: 2rem;
+    margin-bottom: 10px;
 }
 
-.todo li {
-    flex: 1;
+/* Todo item text */
+.todo-item {
+    flex-grow: 1;
 }
 
-.trash-btn, 
-.complete-btn {
-    color: white;
+/* Completed todo item */
+.todo.completed .todo-item {
+    text-decoration: line-through;
+    color: #a9a9a9; /* Dark grey text */
+    
+}
+
+/* Button within todo items */
+.complete-btn, .trash-btn {
+    background: none;
     border: none;
-    padding: 1rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Increased font size for better visibility */
+    margin: 0 5px; /* Added margin for space between buttons */
 }
 
+/* Button colors */
 .complete-btn {
-    background: rgb(255, 200, 0);
+    color: #32cd328e;
 }
 
 .trash-btn {
-    border-top-right-radius: 1.75rem;
-    border-bottom-right-radius: 1.75rem;
-    background: rgb(171, 171, 171);
+    color: #ff634786;
 }
 
-.todo-item {
-    padding: 0rem 0.5rem;
-}
+.complete-btn:hover {
+    color: #28ce28;
+    transform: scale(1.2); /* Slightly increase size on hover for better visual effect */
+} 
 
-.fa-trash, 
-.fa-check-circle {
-    pointer-events: none;
-}
-
-.completed {
-    text-decoration: line-through;
-    opacity: 0.5;
-}
-
-.slide {
-    transform: translateX(10rem);
-    opacity: 0;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    border: none;
-}
-
-.select {
-    margin: 1rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50px;
-}
-
-select {
-    color:rgb(255, 200, 0);
-    width: 10rem;
-    height: 3.2rem;
-    cursor: pointer;
-    padding: 1rem;
-}
-
-.select::after {
-    content: "\25BC";
-    position: absolute;
-    background:rgb(255, 200, 0);
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.select:hover::after {
-    background: white;
-    color: rgb(255, 200, 0);
+.trash-btn:hover {
+    color: #e74225;
+    transform: scale(1.2); /* Slightly increase size on hover for better visual effect */
 }
